@@ -15,7 +15,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="BrainjuicerRuleSet.ruleset" target="BrainjuicerRuleSet.ruleset" />
     <file src="build\**" target="build" />
+    <file src="content\**" target="content" />
   </files>
 </package>
