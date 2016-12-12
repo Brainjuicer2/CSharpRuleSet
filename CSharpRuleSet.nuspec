@@ -10,6 +10,9 @@
     <projectUrl>https://github.com/Brainjuicer2/CSharpRuleSet</projectUrl>
     <licenseUrl>https://raw.githubusercontent.com/Brainjuicer2/CSharpRuleSet/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <dependencies>
+      <dependency id="StyleCop.Analyzers" version="1.0.0"></dependency>
+    </dependencies>
   </metadata>
   <files>
     <file src="BrainjuicerRuleSet.ruleset" target="BrainjuicerRuleSet.ruleset" />
