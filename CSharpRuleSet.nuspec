@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>CSharpRuleSet</id>
+    <version>1.0.0</version>
+    <description>Custom code analyser ruleset used in Brainjuicer</description>
+    <authors>BrainJuicer</authors>
+    <owners>BrainJuicer</owners>
+    <title>CSharpRuleSet</title>
+    <projectUrl>https://github.com/Brainjuicer2/CSharpRuleSet</projectUrl>
+    <licenseUrl>https://raw.githubusercontent.com/Brainjuicer2/CSharpRuleSet/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+  </metadata>
+  <files>
+    <file src="BrainjuicerRuleSet.ruleset" target="BrainjuicerRuleSet.ruleset" />
+    <file src="build\**" target="build" />
+  </files>
+</package>
