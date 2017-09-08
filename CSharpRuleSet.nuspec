@@ -3,12 +3,12 @@
   <metadata>
     <id>CSharpRuleSet</id>
     <version>1.0.0</version>
-    <description>Custom code analyser ruleset used in Brainjuicer</description>
-    <authors>BrainJuicer</authors>
-    <owners>BrainJuicer</owners>
+    <description>Custom code analyser ruleset used by System1Group</description>
+    <authors>System1Group</authors>
+    <owners>System1Group</owners>
     <title>CSharpRuleSet</title>
-    <projectUrl>https://github.com/Brainjuicer2/CSharpRuleSet</projectUrl>
-    <licenseUrl>https://raw.githubusercontent.com/Brainjuicer2/CSharpRuleSet/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/System1Group/CSharpRuleSet</projectUrl>
+    <licenseUrl>https://raw.githubusercontent.com/System1Group/CSharpRuleSet/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <dependencies>
       <dependency id="StyleCop.Analyzers" version="1.1.0-beta004"></dependency>
