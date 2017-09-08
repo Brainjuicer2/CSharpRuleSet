@@ -15,6 +15,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="content\**" target="content" />
+    <file src="build\**" target="build" />
   </files>
 </package>
