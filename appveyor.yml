@@ -1,11 +1,19 @@
 version: 2.0.{build}
+
+environment: 
+  build_suffix: "alpha"
+
+build_script:
+- ps: nuget pack CSharpRuleSet.nuspec -Version $env:APPVEYOR_BUILD_VERSION -Suffix $env:build_suffix
+test: off
+artifacts:
+- path: '**\*.nupkg'
+
 for:
 -
  branches:
    only:
    - master
- build_script:
- - ps: nuget pack CSharpRuleSet.nuspec -Version $env:APPVEYOR_BUILD_VERSION
- test: off
- artifacts:
- - path: '**\*.nupkg'
+   
+ environment:
+   build_suffix: ""
