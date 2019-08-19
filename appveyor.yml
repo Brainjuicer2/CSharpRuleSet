@@ -4,7 +4,7 @@ environment:
   build_options: 'alpha'
 
 build_script:
-- ps: nuget pack CSharpRuleSet.nuspec -Version $env:APPVEYOR_BUILD_VERSION -Suffix $(If ($env:build_options) {$env:build_options} Else {""})
+- ps: nuget pack CSharpRuleSet.nuspec -Version $env:APPVEYOR_BUILD_VERSION -Suffix $(If ($env:build_options) {$env:build_options} Else {[string]::Empty})
 test: off
 artifacts:
 - path: '**\*.nupkg'
