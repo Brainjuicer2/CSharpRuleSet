@@ -1,33 +1,9 @@
 version: 2.0.{build}
-
-environment:
-    is_pr: false
-
-init:
-- ps: >-
-    if($env:APPVEYOR_PULL_REQUEST_NUMBER) 
-    { 
-      $env:is_pr = "true";
-    }
-
-nuget:
-  account_feed: true
-  project_feed: true
-  disable_publish_on_pr: true
-
-
+branches:
+  only:
+  - master
 build_script:
 - ps: nuget pack CSharpRuleSet.nuspec -Version $env:APPVEYOR_BUILD_VERSION
 test: off
-
-for:
--
-  branches:
-    only:
-      - master
-
-  deploy:
-   - provider: NuGet
-     artifact: '**\*.nupkg'
-     on: 
-      is_pr: false
+artifacts:
+- path: '**\*.nupkg'
