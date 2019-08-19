@@ -16,4 +16,4 @@ for:
    - master
    
  environment:
-   build_suffix: ""
+   build_suffix: [string]::Empty
