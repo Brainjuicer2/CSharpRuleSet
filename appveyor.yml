@@ -1,10 +1,10 @@
 version: 2.0.{build}
 
 environment: 
-  build_options: "-Suffix alpha"
+  build_options: "alpha"
 
 build_script:
-- ps: nuget pack CSharpRuleSet.nuspec -Version $env:APPVEYOR_BUILD_VERSION $env:build_options
+- ps: nuget pack CSharpRuleSet.nuspec -Version $env:APPVEYOR_BUILD_VERSION -Suffix $env:build_options
 test: off
 artifacts:
 - path: '**\*.nupkg'
@@ -16,4 +16,4 @@ for:
    - master
    
  environment:
-   build_options: ""
+   build_options: "''"
