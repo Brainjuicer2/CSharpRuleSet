@@ -28,6 +28,11 @@ for:
 
   deploy:
    - provider: NuGet
+     api_key: 
+      secure: IrdZtx67bSY1P/QrMjsUoMK03U3uXJX6s/2C6vfxBiE=
+     account_feed: true
+     project_feed: false
+     skip_symbols: true
      artifact: '**\*.nupkg'
      on: 
       is_pr: false
