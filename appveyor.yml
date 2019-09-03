@@ -3,9 +3,13 @@ version: 0.0.{build}
 branches:
   only:
   - master
+
 nuget:
   account_feed: true
   disable_publish_on_pr: true
+
+build:
+  publish_nuget: false
 
 build_script:
 - ps: nuget pack CSharpRuleSet.nuspec -Version $env:APPVEYOR_BUILD_VERSION
