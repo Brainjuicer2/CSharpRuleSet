@@ -1,9 +1,16 @@
-version: 2.0.{build}
+version: 0.0.{build}
+
 branches:
   only:
   - master
+nuget:
+  account_feed: true
+  disable_publish_on_pr: true
+
 build_script:
 - ps: nuget pack CSharpRuleSet.nuspec -Version $env:APPVEYOR_BUILD_VERSION
+
 test: off
+
 artifacts:
 - path: '**\*.nupkg'
