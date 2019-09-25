@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<RuleSet Name="Brainjuicer Rules" Description="Code analysis used by Brainjuicer applications." ToolsVersion="14.0">
+<RuleSet Name="System1Group Rules" Description="Code analysis used by System1Group applications." ToolsVersion="14.0">
   <Rules AnalyzerId="Microsoft.Analyzers.ManagedCodeAnalysis" RuleNamespace="Microsoft.Rules.Managed">
     <Rule Id="CA1001" Action="Warning" />
     <Rule Id="CA1009" Action="Warning" />

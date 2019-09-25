@@ -1,9 +1,23 @@
-version: 2.0.{build}
+version: 0.0.{build}
+
+init:
+- ps: if ($env:APPVEYOR_REPO_TAG -eq "true") { Update-AppveyorBuild -Version "$env:APPVEYOR_REPO_TAG_NAME" }
+
 branches:
   only:
   - master
+
+nuget:
+  account_feed: true
+  disable_publish_on_pr: true
+
+build:
+  publish_nuget: false
+
 build_script:
 - ps: nuget pack CSharpRuleSet.nuspec -Version $env:APPVEYOR_BUILD_VERSION
+
 test: off
-artifacts:
-- path: '**\*.nupkg'
+
+on_success:
+- ps: if ($env:APPVEYOR_REPO_TAG -eq "true") { Get-ChildItem -Path .\ -Include *.nupkg -Recurse | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name } } else { Write-Host "Skip uploading artefacts for non-tag build." }
