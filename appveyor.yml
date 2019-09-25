@@ -1,5 +1,8 @@
 version: 0.0.{build}
 
+init:
+- ps: if ($env:APPVEYOR_REPO_TAG -eq "true") { Update-AppveyorBuild -Version "$env:APPVEYOR_REPO_TAG_NAME" }
+
 branches:
   only:
   - master
@@ -16,5 +19,5 @@ build_script:
 
 test: off
 
-artifacts:
-- path: '**\*.nupkg'
+on_success:
+- ps: if ($env:APPVEYOR_REPO_TAG -eq "true") { Get-ChildItem -Path .\ -Include *.nupkg -Recurse | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name } } else { Write-Host "Skip uploading artefacts for non-tag build." }
